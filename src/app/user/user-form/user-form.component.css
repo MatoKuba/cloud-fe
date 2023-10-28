@@ -1,0 +1,19 @@
+input, label {
+  display:block;
+}
+
+input {
+  margin-bottom: 1rem;
+}
+
+.invalid-input {
+  border-color: red;
+}
+
+.invalid-text {
+  color: red;
+}
+
+button[type="reset"] {
+  margin-left: 0.5rem;
+}

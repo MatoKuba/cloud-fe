@@ -1,0 +1,31 @@
+<form [formGroup]="filterForm" (submit)="filter()">
+  <input formControlName="lastName"/>
+
+  <button type="submit">Filtrovať</button>
+</form>
+<h1>TUSOM</h1>
+<table>
+  <tr>
+    <th>Meno</th>
+    <th>Priezvisko</th>
+    <th style="width: 20px"></th>
+  </tr>
+  <tr *ngFor="let person of persons?.content">
+    <td>{{ person.firstName }}</td>
+    <td>{{ person.lastName }}</td>
+    <td>
+      <button (click)="updatePerson(person.id)">
+        Upraviť
+      </button>
+      <button (click)="deletePerson(person.id)">
+        Zmazať
+      </button>
+    </td>
+  </tr>
+</table>
+<h1>TUSOM</h1>
+<ngb-pagination [collectionSize]="getTotalElements()"
+                [page]="getPageNumber()"
+                [pageSize]="getPageSize()"
+                (pageChange)="changePage($event)">
+</ngb-pagination>

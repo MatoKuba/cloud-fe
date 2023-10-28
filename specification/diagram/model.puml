@@ -1,0 +1,40 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Book {
++ id: Integer
++ title: String
++ count: Integer
++ status: BookStatus
++ isbn: String
++ author: String
+}
+
+class BookCategory {
++ id: Integer
++ name: String
+}
+
+class Customer {
++ id: Integer
++ firstName: String
++ lastName: String
++ email: String
+}
+
+class Borrowing {
++ id: Integer
++ dateOfBorrowing: LocalDate
+}
+
+enum BookStatus {
+AVAILABLE
+NOT_AVAILABLE
+TEMPORARY_NOT_AVAILABLE
+}
+
+Book o-- BookCategory : categories \n *..*
+Borrowing o-- Book :  book \n *..1
+Borrowing o-- Customer : customer \n *..1
+
+@enduml

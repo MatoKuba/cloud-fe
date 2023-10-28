@@ -1,0 +1,18 @@
+dialog {
+  max-height: 330px;
+  width: 335px;
+  border: none;
+}
+
+dialog > .header {
+  padding: 18px;
+  font-size: 25px;
+}
+
+dialog > .content {
+  padding: 18px;
+}
+
+dialog > .footer {
+  padding: 18px;
+}

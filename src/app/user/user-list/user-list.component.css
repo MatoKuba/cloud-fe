@@ -1,0 +1,17 @@
+table {
+  width: 500px;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+th, td {
+  border: 1px solid;
+}
+
+tr td:last-child {
+  white-space:nowrap;
+}
+
+td button:first-child {
+  margin-right: 0.5rem;
+}

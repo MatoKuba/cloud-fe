@@ -1,0 +1,23 @@
+<h3>POUŽÍVATELIA</h3>
+
+<button (click)="openModal(content)">Pridať používateľa</button>
+
+<app-user-list
+  [persons]="persons"
+  (personToUpdate)="selectPersonToUpdate($event)"
+  (personToDelete)="deletePerson($event)"
+  (pageChange)="getPersons($event)">
+</app-user-list>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Pridanie používateľa</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <app-user-form (formCreate)="createPerson($event); modal.close()"
+                   (formCancel)="modal.close()">
+    </app-user-form>
+  </div>
+</ng-template>
+

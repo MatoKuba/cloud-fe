@@ -1,0 +1,12 @@
+<form [formGroup]="form" (submit)="saveBorrowing()">
+  <label>Používateľ:
+    <select type="text" formControlName="user">
+      <option *ngFor="let user of users?.content" [value]="user.id">
+        {{ user.firstName + ' ' + user.lastName }}
+      </option>
+    </select>
+  </label>
+
+  <button type="submit" [disabled]="form.invalid">Uložiť</button>
+</form>
+
